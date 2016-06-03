@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :categories
+  resources :articles
+  devise_for :users
   root 'home#index'
+  get 'home/about'
+  get 'home/motivation'
+  get 'home/teory'
+  get 'home/products'
+  get 'home/recipies'
+  get 'home/tips'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
