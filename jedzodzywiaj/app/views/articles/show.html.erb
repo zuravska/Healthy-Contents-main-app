@@ -12,8 +12,12 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @article.category %>
+  <%= @article.category.name %>
 </p>
 
+<p>
+  <strong>Date:</strong>
+  <%= @article.created_at.strftime("%d %B %Y") %>
+</p>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

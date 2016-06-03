@@ -1,8 +1,16 @@
-<ul><%= link_to 'Strona główna', root_path %>
-<li><%= link_to 'Motywacja', home_motivation_path %></li>
-<li><%= link_to 'Teoria odżywiania', home_teory_path %><li>
-<li><%= link_to 'Produkty', home_products_path %><li>
-<li><%= link_to 'Przepisy', home_recipies_path %><li>
-<li><%= link_to 'Porady', home_tips_path %><li>
-<li><%= link_to 'O projekcie', home_about_path %><li>
-</ul>
+<%= link_to 'Strona główna', root_path %>
+<%= link_to 'Motywacja', articles_motivation_path %>
+<%= link_to 'Teoria odżywiania', articles_teory_path %>
+<%= link_to 'Produkty', articles_products_path %>
+<%= link_to 'Przepisy', articles_recipies_path %>
+<%= link_to 'Porady', articles_tips_path %>
+<%= link_to 'O projekcie', home_about_path %>
+<%= link_to 'Dodaj artykuł', new_article_path %>
+<%if user_signed_in? %>
+      	<%= link_to 'Edycja profilu', edit_user_registration_path %>>
+      	
+        <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete %>
+      <% else %>
+      	<%= link_to 'Logowanie', new_user_session_path %>
+        <%= link_to 'Rejestracja', new_user_registration_path %>
+      <% end %>

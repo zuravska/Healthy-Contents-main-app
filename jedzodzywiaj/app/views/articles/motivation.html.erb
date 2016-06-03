@@ -1,0 +1,34 @@
+
+<h1>Listing Articles with Motivation Category</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @article_list.each do |category, article_items| %>
+      <%= category %>   
+      <% article_items.each do |article_item| %>
+        <%= article_item.name %>       # missing here  
+    <% end %>   
+  <% end %>
+
+
+  </tbody>
+</table>
+
+<br>
+
+
+<% @article_list.each do |category, article_items| %>
+  <%= category %>   
+  <% article_items.each do |article_item| %>
+    <%= article_item.name %>       # missing here  
+  <% end %>   
+<% end %>

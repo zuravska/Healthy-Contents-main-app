@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   get 'home/about'
-  get 'home/motivation'
-  get 'home/teory'
-  get 'home/products'
-  get 'home/recipies'
-  get 'home/tips'
+  get 'articles/motivation'
+  get 'articles/teory'
+  get 'articles/products'
+  get 'articles/recipies'
+  get 'articles/tips'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

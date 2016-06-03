@@ -13,9 +13,10 @@
  *= require_tree .
  *= require_self
  */
-
+/*
 body {
 	background-color: #0E0E0E;
+	color: white;
 }
 
 nav { font-family: Arial, sans-serif; font-weight: bold; }
@@ -26,7 +27,6 @@ nav a { background-color: #CCFF00; color: black; padding: 1em 1.2em;
 
 .navbar {background-color: #CCFF00;
 
-
  }
 
  .backgrounddiv{
@@ -34,3 +34,4 @@ nav a { background-color: #CCFF00; color: black; padding: 1em 1.2em;
  	width: 100%;
  	height: 100%;
  }
+ */
