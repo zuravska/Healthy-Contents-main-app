@@ -4,7 +4,16 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params[:category]
+      category = Category.find_by_name(params[:category])
+      if category
+        @articles = category.articles
+      else
+        @articles = []
+      end
+    else
+      @articles = Article.all
+    end
   end
 
   #def motivation
