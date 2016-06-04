@@ -15,26 +15,7 @@ class ArticlesController < ApplicationController
       @articles = Article.all
     end
   end
-
-  #def motivation
-  # @articles = Article.all
-  #  @article_list = @articles.group_by { |t| t.category.name }
-  #end
-
-  #def teory
-  #  @articles = Article.all
-  #end
-
-  #def products
-  #  @articles = Article.all
-  #end
-  #def recipies
-   # @articles = Article.all
-  #end
-  #def tips
-   # @articles = Article.all
-  #end
-#
+  
   # GET /articles/1
   # GET /articles/1.json
   def show

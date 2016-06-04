@@ -20,10 +20,10 @@
     <%= f.text_area :content %>
   </div>
 
- 
+  <div class="field">
   <%= f.label :category %><br>
   <%= f.select :category_id, options_for_select(Category.all.map{|s|[s.name, s.id]}) %>
-  
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
