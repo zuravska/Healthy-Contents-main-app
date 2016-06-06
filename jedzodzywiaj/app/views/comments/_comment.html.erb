@@ -8,9 +8,13 @@
     <%= comment.body %>
   </p>
 
+  
+  <% if comment.user == current_user %>
   <p>
-  <%= link_to 'Delete', [comment.article, comment],
+  <%= link_to 'Usuń', [comment.article, comment],
  			   :method => :delete,
                data: {:confirm => 'Are you sure?'} %>
-</p>
+  </p>
+
+  <% end %>
 

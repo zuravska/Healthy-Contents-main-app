@@ -3,12 +3,14 @@
   <%= link_to category.name, articles_path(category: category.name) %>
 <% end %>
 <%= link_to 'O projekcie', home_about_path %>
-<%= link_to 'Dodaj artykuł', new_article_path %>
-<%if user_signed_in? %>
-      	<%= link_to 'Edycja profilu', edit_user_registration_path %>>
-      	
+	<%if user_signed_in? %>
+			<% if current_user.admin? %>
+		        <%= link_to 'Dodaj artykuł', new_article_path %>
+		    <% end %>
+      	<%= link_to 'Edycja profilu', edit_user_registration_path %>
         <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete %>
-      <% else %>
+    
+  	<% else %>
       	<%= link_to 'Logowanie', new_user_session_path %>
         <%= link_to 'Rejestracja', new_user_registration_path %>
-      <% end %>
+    <% end %>
