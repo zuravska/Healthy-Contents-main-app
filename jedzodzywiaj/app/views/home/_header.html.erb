@@ -1,16 +1,39 @@
-<%= link_to 'Strona główna', root_path %>
-<% Category.all.each do |category| %>
-  <%= link_to category.name, articles_path(category: category.name) %>
-<% end %>
-<%= link_to 'O projekcie', home_about_path %>
-	<%if user_signed_in? %>
-			<% if current_user.admin? %>
-		        <%= link_to 'Dodaj artykuł', new_article_path %>
-		    <% end %>
-      	<%= link_to 'Edycja profilu', edit_user_registration_path %>
-        <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete %>
+<nav class="navbar" role="navigation">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+      <% Category.all.each do |category| %>
+        <li><%= link_to category.name, articles_path(category: category.name) %></li>
+        <% end %>
+        <li><%= link_to 'O PROJEKCIE', home_about_path %></li>
+        <%if user_signed_in? %>
+          <% if current_user.admin? %>
+        <li><%= link_to 'DODAJ ARTYKUŁ', new_article_path %></li>
+          <% end %>
+        <li><%= link_to 'EDYCJA PROFILU', edit_user_registration_path %></li>
+        <li><%= link_to 'WYLOGUJ', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to 'LOGOWANIE', new_user_session_path %></li>
+        <li><%= link_to 'REJESTRACJA', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+
+
+
+	
+		        
+		    
+      	
+       
     
-  	<% else %>
-      	<%= link_to 'Logowanie', new_user_session_path %>
-        <%= link_to 'Rejestracja', new_user_registration_path %>
-    <% end %>
+  	
+        
+  

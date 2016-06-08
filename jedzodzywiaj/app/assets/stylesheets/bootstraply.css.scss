@@ -1,0 +1,20 @@
+$panel-default-heading-bg: #adc706;
+$panel-heading-padding: 10px 50px;
+$panel-inner-border: black;
+$panel-body-padding: 50px;
+$panel-body-border: white;
+$panel-border-radius: 0px;
+$input-border: #adc706;
+$input-border-focus: #adc706;
+$input-color: black;
+$btn-default-bg: #c8d959; 
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.czytajwiecej{
+	position: absolute;
+    left: 100px;
+    top: 150px;
+}
+

@@ -11,20 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :Tytuł%><br>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
+  <div class="form-group">
+    <%= f.label :Treść %><br>
+    <%= f.cktext_area :content, rows: 10 %>
   </div>
 
-  <div class="field">
-  <%= f.label :category %><br>
-  <%= f.select :category_id, options_for_select(Category.all.map{|s|[s.name, s.id]}) %>
+  <div class="form-group">
+  <%= f.label :Kategoria %><br>
+  <%= f.select :category_id, options_for_select(Category.all.map{|s|[s.name, s.id]}), class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Dodaj artykuł", class: 'btn btn-default' %>
   </div>
 <% end %>
