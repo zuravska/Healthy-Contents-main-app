@@ -16,13 +16,13 @@
 
 
 body { color:white;
-	background-color: #131627;
+	/*background-color: #131627;*/
+	background: linear-gradient(to right, #131627 , #827775 50%, #131627 )
 }
-nav a{color: black; 
-	background-color: #adc706;}
+nav a{	color: black; 
+		background-color: #adc706;
+		height: 40px;}
 
-nav{
-}
 
 .navbar{
 	margin-top: 20px;
@@ -36,13 +36,13 @@ nav{
 .container-fluid {
     background-color: #adc706;
     margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 0px;
+    margin-left: auto;    
 }
 
-* 
-.navbar-brand{
+.navbar-nav > li > a {
+   
+   padding-top: 10px; 
+    padding-bottom: 10px; 
 
 }
 a:hover, a:focus {
@@ -51,13 +51,25 @@ a:hover, a:focus {
 }
 .nav > li > a:hover, .nav > li > a:focus {
   /* text-decoration: none; */
-  background-color: #adc706;}
+  background-color: #adc706;
 }
+
+.glyphicon-chevron-left{
+	color: #adc706;
+}
+.glyphicon-chevron-right{
+	color: #adc706;
+}
+
+
+
+
 /*
 .panel-default{
 	background-color: white;
 	width: 300px;
 }*/
+
 .form-group{
 	color:pink;
 }
