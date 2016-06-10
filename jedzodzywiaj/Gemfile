@@ -17,6 +17,8 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'dragonfly', '~> 1.0', '>= 1.0.12'
 gem 'refile', '~> 0.6.2'
 gem 'refile-mini_magick', '~> 0.2.0'
+gem 'jquery-turbolinks', '~> 2.1'
+gem 'masonry-rails', '~> 0.2.4'
 
 
 
