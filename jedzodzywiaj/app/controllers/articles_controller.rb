@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    cookies[:last_article_id] = params[:id]
   end
 
   # GET /articles/new

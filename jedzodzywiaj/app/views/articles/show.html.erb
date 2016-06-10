@@ -1,31 +1,42 @@
+<div class="panel panel-default widoczek">
+	<div class="tloartshow">
+			<div class="zdjecieart">
+				<%= image_tag @article.image.url %><br>
+			</div>
 
-<%= image_tag @article.image.url(:medium) %><br>
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+			<div class="artcontent">
+	  				<h1 class="articletitle"><%= @article.title %></h1>
 
-<p>
-  <strong>Content:</strong>
-  <%= raw(@article.content) %>
-</p>
+	  				<%= raw(@article.content) %>
 
-<p>
-  <strong>Category:</strong>
-  <%= @article.category.name %>
-</p>
+		  				<div class="dateart">
+		  					<p>Dodany <%= @article.created_at.strftime("%d %B %Y") %></p>
+		  				</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @article.created_at.strftime("%d %B %Y") %>
-</p>
-
-<h2><%= @article.comments.count %> Comments</h2>
-<%= render @article.comments %>
-
-<h3>Add a comment:</h3>
-<%= render "comments/form" %>
+  			</div>
 
 
-<%= link_to 'Edytuj', edit_article_path(@article) %> |
-<%= link_to 'Wstecz', articles_path %>
+	</div>			
+</div>
+  			
+
+<div class="panel panel-default widoczek">
+<div class="commentart">
+					<h2> Liczba komentarzy: <%= @article.comments.count %></h2>
+						<%= render @article.comments %>
+
+					<h3>Dodaj komentarz:</h3>
+						<%= render "comments/form" %>
+			</div>
+					<div class="panel-footer">
+					<%if user_signed_in? %>
+						<% if current_user.admin? %>
+							<%= link_to 'Edytuj', edit_article_path(@article) %> 
+						<% end %>
+						<%= link_to 'Wstecz', articles_path %>
+					<% else %>
+						<%= link_to 'Wstecz', articles_path %>
+					<% end %>
+
+</div>
+

@@ -95,12 +95,14 @@ a:hover, a:focus {
 .panel-footer > a{
 	text-decoration: none;
 	font-weight: bold;
+	margin-right: 20px;
 	
 }
 .panel-footer > a:hover{
 	color: #adc706;
 	text-decoration: none;
 	font-weight: bold;
+
 }
 
 
@@ -135,4 +137,53 @@ footer {
 }
 .box img {
 	width: 100%;
+}
+
+
+
+
+
+#comment_body{
+color: black;
+}
+#comment_user_id{
+ color: black;
+}
+
+
+
+
+.zdjecieart{
+text-align: center;
+
+}
+.panel-default.widoczek{
+	box-shadow: 5px 5px 10px
+	background-color: white; 
+	color:black;
+	width: 100%;
+	margin-top: 20px;
+}
+.articletitle{
+	margin-bottom: 30px;
+	
+}
+.artcontent{
+	margin: 40px;
+}
+.tloartshow{
+	width: 100%;
+	padding: 30px;
+	margin: 0 auto;
+
+}
+.commentart{
+	width: 100%;
+	padding: 0 50px 30px 50px;
+}
+
+.dateart{
+	margin-top: 40px;
+	margin-bottom: 0;
+color: gray;
 }

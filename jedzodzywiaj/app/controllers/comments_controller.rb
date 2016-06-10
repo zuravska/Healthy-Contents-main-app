@@ -25,8 +25,11 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(params[:comment].permit(:user_id,:body))
-    redirect_to article_path(@article)
+    @comment = @article.comments.create(params[:comment].permit(:body))
+    if current_user
+      @comment.update_attribute(:user_id,current_user.id)
+    end
+    redirect_to article_path(@article), notice: 'Komentarz został dodany.'
 
    # @comment = Comment.new(comment_params)
 
@@ -61,7 +64,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
-    redirect_to article_path(@article)
+    redirect_to article_path(@article), notice: 'Komentarz został usunięty.'
 #    respond_to do |format|
 #       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
 #       format.json { head :no_content }

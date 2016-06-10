@@ -1,10 +1,19 @@
 <p>
-    <b>User:</b>
-    <%= comment.user_id %>
+ <%= comment.created_at.strftime("%d %B %Y") %>
+ </p>
+ <p>
+    <b>
+    <% if comment.user_id  && comment.user_id != 0 %>
+    <%= comment.user.email %> pisze: 
+    </b>
+    <% else %>
+
+     <b>Anonim pisze: </b>
+    <% end %>
   </p>
  
+
   <p>
-    <b>Comment:</b>
     <%= comment.body %>
   </p>
 
@@ -17,4 +26,4 @@
   </p>
 
   <% end %>
-
+<hr>
