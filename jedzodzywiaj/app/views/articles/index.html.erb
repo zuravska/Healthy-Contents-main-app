@@ -2,14 +2,15 @@
 <div class="transitions-enabled">
     <% @articles.each do |article| %> 
       <div class="box">  
-        
-                <div class="col-sm-6 col-md-4">
+              <div class="col-sm-6 col-md-4">
                    <div class="thumbnail">
-                      <%= link_to image_tag(article.image.url(:medium)), article %>
+                      <div class="thumbfoto">
+                      <%= link_to image_tag(article.image), article, class: "miniaturka" %>
+                      </div>
                       <div class="caption">
                         <%= time_ago_in_words article.created_at %> ago 
                         <h3><%= link_to article.title, article %></h3>
-                        <%= raw(article.content) %>                  
+                        <%= raw article.content.truncate(140, separator: /\./) %>              
                         <p><%= link_to 'Edytuj', edit_article_path(article), class: "btn btn-primary", role: "button" %>
                         <%= link_to 'Usuń', article, method: :delete, data: { confirm: 'Jesteś pewien?' },class: "btn btn-primary", role: "button"  %> </p>
                         </div>

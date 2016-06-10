@@ -132,13 +132,29 @@ footer {
 	margin: 0 auto;
 }
 .box {
+
 	margin: 5px;
 	
 }
 .box img {
-	width: 100%;
+	height:200px;
+	
+}
+.thumbnail{
+
 }
 
+.thumbfoto{
+	height: 200px;
+	overflow: hidden;
+	
+}
+.miniaturka{
+
+}
+.row{
+
+}
 
 
 
