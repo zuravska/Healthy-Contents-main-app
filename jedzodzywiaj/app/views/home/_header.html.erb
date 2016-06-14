@@ -1,21 +1,32 @@
+<div class"menugorne">
+<div class="navbarsmall" role="navigation">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <ul>
+        <li><%= link_to 'O PROJEKCIE', home_about_path, class: "linkmenu" %></li>
+        <%if user_signed_in? %>
+          <% if current_user.admin? %>
+        <li><%= link_to 'DODAJ ARTYKUŁ', new_article_path, class: "linkmenu" %></li>
+          <% end %>
+        <li><%= link_to 'EDYCJA PROFILU', edit_user_registration_path, class: "linkmenu" %></li>
+        <li><%= link_to 'WYLOGUJ', destroy_user_session_path, method: :delete, class: "linkmenu" %></li>
+        <% else %>
+        <li><%= link_to 'LOGOWANIE', new_user_session_path, class: "linkmenu" %></li>
+        <li><%= link_to 'REJESTRACJA', new_user_registration_path, class: "linkmenu" %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+  </div><!-- /.container-fluid -->
+
+<div class="logo"><%= link_to image_tag("logo.png") %></div>
+
 <nav class="navbar" role="navigation">
   <div class="container-fluid">
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav ">
       <% Category.all.each do |category| %>
-        <li><%= link_to category.name, articles_path(category: category.name) %></li>
-        <% end %>
-        <li><%= link_to 'O PROJEKCIE', home_about_path %></li>
-        <%if user_signed_in? %>
-          <% if current_user.admin? %>
-        <li><%= link_to 'DODAJ ARTYKUŁ', new_article_path %></li>
-          <% end %>
-        <li><%= link_to 'EDYCJA PROFILU', edit_user_registration_path %></li>
-        <li><%= link_to 'WYLOGUJ', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-        <li><%= link_to 'LOGOWANIE', new_user_session_path %></li>
-        <li><%= link_to 'REJESTRACJA', new_user_registration_path %></li>
+        <li><%= link_to category.name, articles_path(category: category.name),class: "linkmenu" %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

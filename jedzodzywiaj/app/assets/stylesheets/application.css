@@ -15,22 +15,42 @@
   *= require_tree .
   *= require_self
  */
+ .logo img{
+ 	max-height: 200px;
+ 	margin: 0 auto;
+ 	display: block;
+ }
 
 body { color:white;
 	/*background-color: #131627;*/
 	background: linear-gradient(to right, #131627 , #827775 50%, #131627 )
 }
-nav a{	color: black; 
-		background-color: #adc706;
-		height: 40px;
-	}
 
 
-.navbar{
+.navbarsmall{
+	margin-top: 7px;
+	margin-right: 5px;
+	text-align: right;
+  }
+.navbarsmall ul { list-style-type: none;  }
+.navbarsmall li { display: inline;  }
+.navbarsmall a { background-color: transparent; color: white; padding: .4em .8em;
+         			text-decoration: none;  }
+.navbarsmall a:hover {  color: #adc706;}
+ }
+
+.navbarsmall > nav a{
+font-size: 0.9em;
+background: none;
+}
+
+
+
+ .navbar{
+    text-align: center;
 	margin-top: 20px;
-	font-size: 0.9em;
+	font-size: 1.1em;
 	color: black;
-	font-weight: bold;
 	border-radius: 0px;
     margin-bottom: 0px;
     border: 0px; 
@@ -43,20 +63,30 @@ nav a{	color: black;
 
 }
 
-.navbar-nav > li > a {
-   
-   padding-top: 10px; 
-    padding-bottom: 10px; 
+.navbar-nav{
+position: relative;
+left: 25%;
+}
 
+
+.navbar-nav > li > a {
+	color: black;
+   	padding-top: 10px; 
+    padding-bottom: 10px; 
+    padding-left: 20px; 
+    padding-right: 30px;
 }
-a:hover, a:focus {
-   color: white;
-  text-decoration: underline;
-}
+
 .nav > li > a:hover, .nav > li > a:focus {
-  /* text-decoration: none; */
+   text-decoration: none;
   background-color: #adc706;
+  color: white;
 }
+
+
+
+
+
 
 .glyphicon-chevron-left{
 	color: #adc706;
@@ -171,6 +201,12 @@ color: black;
 
 .zdjecieart{
 text-align: center;
+max-height: 500px;
+
+}
+.zdjecieart img{
+text-align: center;
+max-height: 500px;
 
 }
 .panel-default.widoczek{
@@ -202,4 +238,16 @@ text-align: center;
 	margin-top: 40px;
 	margin-bottom: 0;
 color: gray;
+}
+
+.artctitle{
+	color: #adc706;
+	text-decoration: none;
+}
+.artctitle > a:hover{
+	color: gray;
+	text-decoration: none;
+}
+.datadod{
+	color: gray;
 }

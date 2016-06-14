@@ -8,11 +8,18 @@
                       <%= link_to image_tag(article.image), article, class: "miniaturka" %>
                       </div>
                       <div class="caption">
-                        <%= time_ago_in_words article.created_at %> ago 
-                        <h3><%= link_to article.title, article %></h3>
-                        <%= raw article.content.truncate(140, separator: /\./) %>              
-                        <p><%= link_to 'Edytuj', edit_article_path(article), class: "btn btn-primary", role: "button" %>
-                        <%= link_to 'Usuń', article, method: :delete, data: { confirm: 'Jesteś pewien?' },class: "btn btn-primary", role: "button"  %> </p>
+                      <p class="datadod">
+                          <%= time_ago_in_words article.created_at, class: "datadod" %> temu 
+                          </p>
+                          <h3 class="artctitle"><%= link_to article.title, article, class: "artctitle" %></h3>
+                          <%= raw article.content.truncate(140, separator: /\./) %>              
+                          <%if user_signed_in? %>
+                            <% if current_user.admin? %>
+                            <p><%= link_to 'Edytuj', edit_article_path(article), class: "btn btn-default", role: "button" %>
+                          <%= link_to 'Usuń', article, method: :delete, data: { confirm: 'Jesteś pewien?' },class: "btn btn-default", role: "button"  %> </p>
+                          <% end %>
+                          <% end %>
+
                         </div>
                     </div>
                 </div>
